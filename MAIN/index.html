@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toe — Two Player</title>
+  <meta name="description" content="Responsive, accessible Tic Tac Toe (3x3). Two-player, win/draw detection, per-game reset, overall reset, player name inputs and scoring." />
+  <link rel="stylesheet" href="style.css" /> 
+</head>
+<body>
+  <div class="page">
+    <main class="card" role="main" aria-labelledby="title">
+      <header class="header">
+        <div>
+          <h1 id="title" style="text-align: center;">Tic Tac Toe</h1>
+        </div>
+        <!-- player names form -->
+         <br>
+        <form id="playersForm" class="players" aria-label="Player names">
+          <label>
+            <span class="sr-only">Player X name</span>
+            <input id="nameX" name="nameX" type="text" placeholder="Player X (default: X)" aria-label="Player X name">
+          </label>
+          <br>
+          <label>
+            <span class="sr-only">Player O name</span>
+            <input id="nameO" name="nameO" type="text" placeholder="Player O (default: O)" aria-label="Player O name">
+          </label>
+        </form>
+      </header>
+
+      <section class="game" aria-label="Tic Tac Toe game">
+        <!-- board -->
+        <div id="board" class="board" role="grid" aria-label="Tic Tac Toe board"></div>
+
+        <!-- status -->
+        <div class="meta">
+          <div class="turn" id="turnLabel" aria-live="polite">Player <strong id="currentPlayerLabel">X</strong>'s turn</div>
+          <div class="scores">
+            <div>X: <span id="scoreX">0</span></div>
+            <div>O: <span id="scoreO">0</span></div>
+          </div>
+        </div>
+        <br>
+        <!-- result -->
+        <div id="result" class="result" role="status" aria-live="polite" hidden></div>
+
+        <!-- controls -->
+        <div class="controls">
+          <button id="resetRound" type="button">Reset Round</button>
+          <button id="resetAll" type="button" class="secondary">Reset All (scores & names)</button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>
+          <hr>
+          <a href="LICENSE" rel="license" target="_blank" rel="noopener">MIT License</a> — Copyright © 2025 SATYAM SINGH.
+        </small>
+      </footer>
+    </main>
+  </div>
+
+  <template id="cellTpl">
+    <button class="cell" type="button" role="gridcell" aria-label="Empty cell" tabindex="0"></button>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
