@@ -3,6 +3,8 @@
 A browser-based **Tic Tac Toe** game built with **HTML, CSS, and JavaScript**.  
 This project was developed as part of my **internship at ArithMatrix Technologies**, focusing on **JavaScript DOM manipulation, responsive UI design, and game logic implementation**.  
 
+🔗 Live Demo: [tic-tac-toe-arithmatrix.netlify.app](https://tic-tac-toe-arithmatrix.netlify.app/)
+
 ---
 
 ## 🚀 Features  
