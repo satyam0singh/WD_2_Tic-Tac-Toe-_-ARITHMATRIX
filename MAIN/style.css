@@ -1,0 +1,160 @@
+:root {
+  --bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border: #e2e8f0;
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+}
+
+.page {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* header */
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--accent);
+}
+.lead {
+  margin: 0.25rem 0 1rem;
+  color: var(--muted);
+}
+.players input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.cell {
+  aspect-ratio: 1 / 1;
+  font-size: clamp(2rem, 6vw, 4rem);
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--card-bg);
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--accent);
+  transition: background 0.2s, transform 0.1s;
+}
+.cell:hover:not([disabled]) {
+  background: #eff6ff;
+}
+.cell:active {
+  transform: scale(0.95);
+}
+.cell[disabled] {
+  cursor: default;
+  color: var(--text);
+}
+
+/* status + scores */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+.turn {
+  font-weight: 500;
+}
+.scores {
+  display: flex;
+  gap: 1rem;
+}
+
+/* result */
+.result {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.result.win {
+  color: green;
+}
+.result.draw {
+  color: #ca8a04;
+}
+
+/* controls */
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  transition: background 0.2s, transform 0.1s;
+}
+button:hover {
+  background: var(--accent-hover);
+}
+button:active {
+  transform: scale(0.95);
+}
+button.secondary {
+  background: #e5e7eb;
+  color: var(--text);
+}
+button.secondary:hover {
+  background: #d1d5db;
+}
+
+/* footer */
+.footer {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
+.footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
